@@ -1,57 +1,22 @@
 import random
-import requests
-import html
+import json
 
-def mostrar_pregunta(pregunta):
-    print("\n📢 Pregunta:")
-    print(pregunta["question"])
-
-    opciones = pregunta["incorrect_answers"] + [pregunta["correct_answer"]]
-    random.shuffle(opciones)
-
-    print("\nOpciones:")
-    for i, opcion in enumerate(opciones, start=1):
-        print(f"{i}. {opcion}")
-
-    return opciones
-
-def obtener_pregunta_por_id(id_categoria):
-    dificultad = random.choice(["medium", "hard"])
+def mostrarPregunta(resultadoDeLaRuleta):
+    """
+    La funcion mostraPregunta(resultadoDeLaRuleta) recibe un archivo json con las preguntas y respuestas del juego y segun el resultado de la ruleta, devuelve una pregunta de esa categoria con sus opciones.
+    """
+    with open("preguntas.json", "r", encoding="utf-8") as archivo:
+        preguntas = json.load(archivo)
     
-    url = f"https://opentdb.com/api.php?amount=1&category={id_categoria}&difficulty={dificultad}&type=multiple"
-
-    respuesta = requests.get(url)
-
-    if respuesta.status_code == 200:
-        data = respuesta.json()
-        if data["results"]:
-            pregunta_bruta = data["results"][0]
-
-            # Decodificar todos los textos HTML
-            pregunta_decodificada = {
-                "category": html.unescape(pregunta_bruta["category"]),
-                "question": html.unescape(pregunta_bruta["question"]),
-                "correct_answer": html.unescape(pregunta_bruta["correct_answer"]),
-                "incorrect_answers": [html.unescape(op) for op in pregunta_bruta["incorrect_answers"]]
-            }
-
-            return pregunta_decodificada
-
-    print("❌ No se pudo obtener una pregunta.")
-    return None
-
-
-def obtener_id_categoria(resultadoDeLaRuleta):
-    mapa_categorias = {
-        "Arte": 25,
-        "Ciencia": 17,
-        "Deportes": 21,
-        "Entretenimiento": 10,
-        "Geografia": 22,
-        "Historia": 23,
-        "Corona": 9
-    }
-    return mapa_categorias.get(resultadoDeLaRuleta, 9)
+    for pregunta in preguntas:
+        if pregunta["categoria"].lower() == resultadoDeLaRuleta.lower():
+            print(f"📚 Pregunta de {pregunta['categoria']}:")
+            print(pregunta["pregunta"])
+            print("Opciones:")
+            for opcion in pregunta["opciones"]:
+                print(f"- {opcion}")
+            break
+    return pregunta
 
 def girarRuleta():
     """
@@ -102,10 +67,6 @@ def main():
     
     resultadoDeLaRuleta = girarRuleta()
     print(f"🎡 Resultado de la ruleta: {resultadoDeLaRuleta}\n")
-    
-    id_categoria = obtener_id_categoria(resultadoDeLaRuleta)
-    pregunta = obtener_pregunta_por_id(id_categoria)
-    
-    opciones = mostrar_pregunta(pregunta)
-    print(opciones)
+
+    pregunta = mostrarPregunta(resultadoDeLaRuleta)
 main()

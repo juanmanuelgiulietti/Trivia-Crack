@@ -1,0 +1,101 @@
+[
+  {
+    "categoria": "Ciencia",
+    "pregunta": "¿Cuál es el símbolo químico del oro?",
+    "opciones": ["Ag", "Au", "O", "Gd"],
+    "respuesta_correcta": "Au",
+    "dificultad": "media"
+  },
+  {
+    "categoria": "Historia",
+    "pregunta": "¿Quién fue el primer emperador romano?",
+    "opciones": ["Julio César", "Nerón", "Augusto", "Calígula"],
+    "respuesta_correcta": "Augusto",
+    "dificultad": "media"
+  },
+  {
+    "categoria": "Geografía",
+    "pregunta": "¿Cuál es el país más grande del mundo?",
+    "opciones": ["Canadá", "China", "Estados Unidos", "Rusia"],
+    "respuesta_correcta": "Rusia",
+    "dificultad": "media"
+  },
+  {
+    "categoria": "Arte",
+    "pregunta": "¿Quién pintó 'La noche estrellada'?",
+    "opciones": [
+      "Claude Monet",
+      "Vincent van Gogh",
+      "Pablo Picasso",
+      "Salvador Dalí"
+    ],
+    "respuesta_correcta": "Vincent van Gogh",
+    "dificultad": "media"
+  },
+  {
+    "categoria": "Entretenimiento",
+    "pregunta": "¿En qué serie aparece el personaje Walter White?",
+    "opciones": ["Narcos", "Breaking Bad", "Ozark", "El Patrón del Mal"],
+    "respuesta_correcta": "Breaking Bad",
+    "dificultad": "media"
+  },
+  {
+    "categoria": "Deportes",
+    "pregunta": "¿Cuántos jugadores hay en un equipo de fútbol en el campo?",
+    "opciones": ["10", "11", "9", "12"],
+    "respuesta_correcta": "11",
+    "dificultad": "media"
+  },
+  {
+    "categoria": "Ciencia",
+    "pregunta": "¿Qué científico desarrolló la teoría de la relatividad?",
+    "opciones": [
+      "Isaac Newton",
+      "Albert Einstein",
+      "Nikola Tesla",
+      "Stephen Hawking"
+    ],
+    "respuesta_correcta": "Albert Einstein",
+    "dificultad": "difícil"
+  },
+  {
+    "categoria": "Historia",
+    "pregunta": "¿En qué año comenzó la Segunda Guerra Mundial?",
+    "opciones": ["1939", "1945", "1914", "1929"],
+    "respuesta_correcta": "1939",
+    "dificultad": "difícil"
+  },
+  {
+    "categoria": "Geografía",
+    "pregunta": "¿Qué país tiene más islas en el mundo?",
+    "opciones": ["Indonesia", "Filipinas", "Suecia", "Malasia"],
+    "respuesta_correcta": "Suecia",
+    "dificultad": "difícil"
+  },
+  {
+    "categoria": "Arte",
+    "pregunta": "¿Quién pintó el techo de la Capilla Sixtina?",
+    "opciones": ["Leonardo da Vinci", "Miguel Ángel", "Rafael", "Donatello"],
+    "respuesta_correcta": "Miguel Ángel",
+    "dificultad": "difícil"
+  },
+  {
+    "categoria": "Entretenimiento",
+    "pregunta": "¿Quién ganó el Oscar a Mejor Actor en 2020?",
+    "opciones": [
+      "Brad Pitt",
+      "Leonardo DiCaprio",
+      "Joaquin Phoenix",
+      "Tom Hanks"
+    ],
+    "respuesta_correcta": "Joaquin Phoenix",
+    "dificultad": "difícil"
+  },
+  {
+    "categoria": "Deportes",
+    "pregunta": "¿Cuántos campeonatos mundiales ganó Michael Schumacher?",
+    "opciones": ["5", "7", "6", "4"],
+    "respuesta_correcta": "7",
+    "dificultad": "difícil"
+  }
+]
